@@ -1,165 +1,186 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maoye Huang</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6; color: #333; background-color: #fff;
-            max-width: 900px; margin: 0 auto; padding: 40px 20px;
-        }
-        .header { display: flex; align-items: flex-start; gap: 40px; margin-bottom: 30px; flex-wrap: wrap; }
-        .profile-img { width: 200px; height: 200px; border-radius: 8px; object-fit: cover; flex-shrink: 0; }
-        .header-info h1 { font-size: 28px; font-weight: 600; margin-bottom: 8px; color: #1a1a1a; }
-        .header-info .affiliation { font-size: 16px; color: #555; margin-bottom: 12px; }
-        .header-info .links { font-size: 14px; color: #666; }
-        .header-info .links a { color: #0066cc; text-decoration: none; margin-right: 12px; }
-        .header-info .links a:hover { text-decoration: underline; }
-        .nav { border-bottom: 1px solid #e0e0e0; padding-bottom: 12px; margin-bottom: 30px; }
-        .nav a { color: #0066cc; text-decoration: none; margin-right: 20px; font-size: 15px; font-weight: 500; }
-        .nav a:hover { text-decoration: underline; }
-        section { margin-bottom: 40px; }
-        section h2 { font-size: 22px; font-weight: 600; color: #1a1a1a; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #f0f0f0; }
-        section h3 { font-size: 17px; font-weight: 600; color: #333; margin-top: 20px; margin-bottom: 10px; }
-        section p { margin-bottom: 12px; font-size: 15px; color: #444; }
-        .about-text { font-size: 15px; color: #444; }
-        .about-text strong { color: #1a1a1a; }
-        .edu-item { margin-bottom: 16px; }
-        .edu-item .edu-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
-        .edu-item .edu-school { font-weight: 600; font-size: 15px; color: #1a1a1a; }
-        .edu-item .edu-date { font-size: 14px; color: #888; }
-        .edu-item .edu-degree { font-size: 14px; color: #555; margin-top: 2px; }
-        .edu-item .edu-advisor { font-size: 14px; color: #666; margin-top: 2px; }
-        .news-list { list-style: none; padding-left: 0; }
-        .news-list li { padding: 8px 0; font-size: 15px; color: #444; border-bottom: 1px solid #f5f5f5; }
-        .news-list li:last-child { border-bottom: none; }
-        .news-date { font-weight: 600; color: #0066cc; margin-right: 8px; }
-        .pub-year { font-size: 18px; font-weight: 600; color: #555; margin-top: 24px; margin-bottom: 12px; }
-        .pub-year:first-child { margin-top: 0; }
-        .pub-item { margin-bottom: 18px; }
-        .pub-title { font-weight: 600; font-size: 15px; color: #1a1a1a; margin-bottom: 4px; }
-        .pub-authors { font-size: 14px; color: #555; margin-bottom: 2px; }
-        .pub-authors strong { color: #1a1a1a; }
-        .pub-venue { font-size: 14px; color: #666; font-style: italic; }
-        .pub-tag { display: inline-block; font-size: 12px; color: #0066cc; background: #eef5ff; padding: 1px 8px; border-radius: 3px; margin-left: 6px; font-style: normal; }
-        .honors-list { list-style: none; padding-left: 0; }
-        .honors-list li { padding: 6px 0; font-size: 15px; color: #444; display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; }
-        .honors-list .honor-date { font-size: 14px; color: #888; white-space: nowrap; }
-        .honors-subsection { font-size: 16px; font-weight: 600; color: #333; margin-top: 20px; margin-bottom: 8px; }
-        footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid #e0e0e0; text-align: center; font-size: 13px; color: #999; }
-        @media (max-width: 600px) {
-            .header { flex-direction: column; align-items: center; text-align: center; }
-            .profile-img { width: 160px; height: 160px; }
-            body { padding: 20px 16px; }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Maoye Huang - Master's student researching medical image processing, self-supervised learning, diffusion models, and multimodal medical signals.">
+  <meta name="theme-color" content="#fafbfc">
+  <title>Maoye Huang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="header">
-        <img src="profile.jpg" alt="Maoye Huang" class="profile-img">
-        <div class="header-info">
-            <h1>Maoye Huang (黄茂叶)</h1>
-            <p class="affiliation">M.S. Student in Computer Science<br>
-            College of Computer and Cyber Security, Fujian Normal University</p>
-            <div class="links">
-                <a href="mailto:qsx20241425@student.fjnu.edu.cn">Email</a>
-                <a href="https://scholar.google.com/citations?user=8yubCCEAAAAJ&hl=en" target="_blank">Google Scholar</a>
-                <a href="https://orcid.org/0000-0003-2789-7746" target="_blank">ORCID</a>
-                <a href="https://github.com/myhuang01" target="_blank">GitHub</a>
-            </div>
-        </div>
-    </div>
-    <div class="nav">
+  <div class="site-shell">
+    <aside class="profile" aria-label="Profile">
+      <img class="profile-photo" src="profile.jpg" alt="Portrait of Maoye Huang">
+      <h1>Maoye Huang</h1>
+      <p class="profile-role">Fujian Normal University</p>
+      <p class="profile-label">Maoye Huang's Homepage</p>
+      <ul class="profile-links">
+        <li><span><i data-lucide="map-pin" aria-hidden="true"></i>Fuzhou, China</span></li>
+        <li><a href="mailto:qsx20241425@student.fjnu.edu.cn"><i data-lucide="mail" aria-hidden="true"></i>Email</a></li>
+        <li><a href="https://scholar.google.com/citations?user=8yubCCEAAAAJ&amp;hl=en" target="_blank" rel="noopener"><i data-lucide="graduation-cap" aria-hidden="true"></i>Google Scholar</a></li>
+        <li><a href="https://orcid.org/0000-0003-2789-7746" target="_blank" rel="noopener"><i data-lucide="circle-user-round" aria-hidden="true"></i>ORCID</a></li>
+        <li><a href="https://github.com/myhuang01" target="_blank" rel="noopener"><i data-lucide="github" aria-hidden="true"></i>GitHub</a></li>
+      </ul>
+    </aside>
+
+    <main>
+      <nav class="quick-nav" aria-label="Primary navigation">
         <a href="#about">About</a>
         <a href="#news">News</a>
         <a href="#publications">Publications</a>
         <a href="#honors">Honors</a>
-    </div>
-    <section id="about">
+      </nav>
+
+      <section class="section-card" id="about">
         <h2>About Me</h2>
-        <div class="about-text">
-            <p>Hi! I am <strong>Maoye Huang</strong>, a Master's student in Computer Science at the <strong>College of Computer and Cyber Security, Fujian Normal University</strong>, advised by Assoc. Prof. Peng Shi. I received my B.S. degree in Computer Science (AI Innovation Class) from Minjiang University in 2023, under the supervision of Prof. Zuoyong Li.</p>
-            <p>My research focuses on <strong>medical image processing</strong>, with particular interests in <strong>diffusion generative models</strong>, <strong>self-supervised representation learning</strong>, <strong>multimodal medical signal processing</strong>, and <strong>few-shot adaptation</strong>. I am also broadly interested in AI Agents, World Models, Embodied AI, and Multimodal Learning.</p>
+        <p class="lead">Hi! I am <strong>Maoye Huang</strong>, a Master's student in Computer Science at <a href="https://www.fjnu.edu.cn/" target="_blank" rel="noopener">Fujian Normal University</a>, advised by Associate Professor Peng Shi. I received my B.S. degree in Computer Science from Minjiang University in 2023, where I worked with Professor Zuoyong Li.</p>
+        <p>My research centers on medical artificial intelligence, particularly the development of reliable representation and generative learning methods for clinical images and physiological signals. I also visited Zhengzhou University in 2024, working with Associate Research Fellow Haoyi Fan on ECG signal processing and generation.</p>
+
+        <h3><i data-lucide="microscope" aria-hidden="true"></i>Research Interests</h3>
+        <ul class="interest-list">
+          <li><strong>Medical Image Processing:</strong> learning diagnostic representations from limited annotations and preserving clinically important structures.</li>
+          <li><strong>Generative and Representation Learning:</strong> diffusion models, self-supervised learning, contrastive learning, and few-shot adaptation.</li>
+          <li><strong>Multimodal Medical Signals:</strong> fine-grained alignment between physiological waveforms, clinical text, and diagnostic semantics.</li>
+        </ul>
+        <div class="tag-row" aria-label="Research topics">
+          <span class="tag">Medical Image Processing</span>
+          <span class="tag">Diffusion Models</span>
+          <span class="tag">Self-Supervised Learning</span>
+          <span class="tag">Multimodal Learning</span>
+          <span class="tag">Few-Shot Adaptation</span>
         </div>
-        <h3>Education</h3>
-        <div class="edu-item">
-            <div class="edu-header"><span class="edu-school">Fujian Normal University</span><span class="edu-date">09/2024 – Present</span></div>
-            <div class="edu-degree">M.S. in Computer Science</div>
-            <div class="edu-advisor">Advisor: Assoc. Prof. Peng Shi</div>
+
+        <h3><i data-lucide="landmark" aria-hidden="true"></i>Education</h3>
+        <div class="education-grid">
+          <div class="education-item">
+            <time>2024 - Present</time>
+            <b>Fujian Normal University</b>
+            <span>M.S. in Computer Science<br>Advisor: Peng Shi</span>
+          </div>
+          <div class="education-item">
+            <time>Jun - Jul 2024</time>
+            <b>Zhengzhou University</b>
+            <span>Visiting Student<br>Host: Haoyi Fan</span>
+          </div>
+          <div class="education-item">
+            <time>2019 - 2023</time>
+            <b>Minjiang University</b>
+            <span>B.S. in Computer Science<br>Advisor: Zuoyong Li</span>
+          </div>
         </div>
-        <div class="edu-item">
-            <div class="edu-header"><span class="edu-school">Zhengzhou University</span><span class="edu-date">06/2024 – 07/2024</span></div>
-            <div class="edu-degree">Visiting Student</div>
-            <div class="edu-advisor">Advisor: Assoc. Research Fellow Haoyi Fan</div>
-        </div>
-        <div class="edu-item">
-            <div class="edu-header"><span class="edu-school">Minjiang University</span><span class="edu-date">09/2019 – 06/2023</span></div>
-            <div class="edu-degree">B.S. in Computer Science (AI Innovation Class), GPA: 3.59/4.0</div>
-            <div class="edu-advisor">Advisor: Prof. Zuoyong Li</div>
-        </div>
-    </section>
-    <section id="news">
+      </section>
+
+      <section class="section-card" id="news">
         <h2>News</h2>
-        <ul class="news-list">
-            <li><span class="news-date">2026.07</span> Our paper "Pathology-Aligned Contrastive Representation Learning for Gleason Grading" was published in <strong>IEEE Transactions on Medical Imaging (TMI)</strong>, 2026.</li>
-            <li><span class="news-date">2026.05</span> Received the <strong>"Rising Star" Award</strong> at the 25th Science and Technology Festival, Fujian Normal University.</li>
-            <li><span class="news-date">2025.11</span> Our paper "SADiff: Structure-Aware Diffusion Model for Enhancing Prostate Multiphoton Microscopy Imaging" was published in <strong>Expert Systems with Applications (ESWA)</strong>, 2025.</li>
-            <li><span class="news-date">2025.10</span> Received the <strong>National Scholarship for Graduate Students</strong>.</li>
-            <li><span class="news-date">2024.09</span> Started my M.S. studies at Fujian Normal University, advised by Assoc. Prof. Peng Shi.</li>
-        </ul>
-    </section>
-    <section id="publications">
+        <div class="news-box">
+          <ul class="news-list">
+            <li><span class="news-date">2026.07</span>Our work on pathology-aligned contrastive representation learning appeared in <strong>IEEE Transactions on Medical Imaging</strong>.</li>
+            <li><span class="news-date">2026</span>Received the <strong>Graduate Rising Star</strong> recognition at the 25th Science and Technology Festival of Fujian Normal University.</li>
+            <li><span class="news-date">2025</span>Received the <strong>National Scholarship for Graduate Students</strong>.</li>
+            <li><span class="news-date">2025.06</span>Our structure-aware diffusion model for prostate multiphoton microscopy imaging was published online in <strong>Expert Systems with Applications</strong>.</li>
+            <li><span class="news-date">2024.09</span>Started my M.S. studies at Fujian Normal University.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section-card" id="publications">
         <h2>Publications</h2>
-        <div class="pub-year">2026</div>
-        <div class="pub-item">
-            <div class="pub-title">Pathology-Aligned Contrastive Representation Learning for Gleason Grading</div>
-            <div class="pub-authors"><strong>Maoye Huang</strong>, Jing Zhong, Jiawei Wu, Jia He, Zuoyong Li, Peng Shi*, Xiaoqin Zhu*</div>
-            <div class="pub-venue">IEEE Transactions on Medical Imaging (TMI), 2026, 45(7): 3734–3749. <span class="pub-tag">JCR Q1, IF: 12.4</span></div>
-        </div>
-        <div class="pub-year">2025</div>
-        <div class="pub-item">
-            <div class="pub-title">SADiff: Structure-Aware Diffusion Model for Enhancing Prostate Multiphoton Microscopy Imaging</div>
-            <div class="pub-authors"><strong>Maoye Huang</strong>, Xinpeng Huang, Hong Chen, Haoyi Fan, Peng Shi*, Xiaoqin Zhu*</div>
-            <div class="pub-venue">Expert Systems with Applications (ESWA), 2025, 292: 128447. <span class="pub-tag">JCR Q1, IF: 9.4</span></div>
-        </div>
-        <div class="pub-year">2023</div>
-        <div class="pub-item">
-            <div class="pub-title">StainGAN: Learning a Structural Preserving Translation for White Blood Cell Images</div>
-            <div class="pub-authors"><strong>Maoye Huang</strong>, Tao Wang, Yuanzheng Cai, Haoyi Fan*, Zuoyong Li*</div>
-            <div class="pub-venue">Journal of Biophotonics, 2023, 16(11): e202300196. <span class="pub-tag">JCR Q2, IF: 2.0</span></div>
-        </div>
-        <div class="pub-year">2021</div>
-        <div class="pub-item">
-            <div class="pub-title">An Improved Unsupervised White Blood Cell Classification via Contrastive Learning</div>
-            <div class="pub-authors">Yuning Zhong, <strong>Maoye Huang</strong>, Haoyi Fan, Rong Hu*, Zuoyong Li*</div>
-            <div class="pub-venue">Proc. Data Mining and Big Data (DMBD), 2021, pp. 100–109. <span class="pub-tag">EI Conference</span></div>
-        </div>
-    </section>
-    <section id="honors">
-        <h2>Honors &amp; Awards</h2>
-        <ul class="honors-list">
-            <li><span>"Rising Star" Award, 25th Science and Technology Festival, Fujian Normal University</span><span class="honor-date">2026</span></li>
-            <li><span>National Scholarship for Graduate Students</span><span class="honor-date">2025</span></li>
-            <li><span>Merit Student, Fujian Normal University</span><span class="honor-date">2025</span></li>
-            <li><span>First-Class Academic Scholarship for Graduate Students, Fujian Normal University</span><span class="honor-date">2024</span></li>
-            <li><span>Outstanding Graduate, Minjiang University</span><span class="honor-date">2023</span></li>
-            <li><span>Outstanding Graduation Thesis, Minjiang University</span><span class="honor-date">2023</span></li>
-            <li><span>Third-Class Scholarship, Minjiang University</span><span class="honor-date">2021</span></li>
-            <li><span>First-Class Scholarship, Minjiang University</span><span class="honor-date">2020</span></li>
-            <li><span>Merit Student, Minjiang University</span><span class="honor-date">2020</span></li>
+        <p class="pub-note">Four published papers. Asterisks indicate corresponding authors.</p>
+
+        <div class="year-badge">2026</div>
+        <ul class="pub-list">
+          <li class="pub-card">
+            <div class="paper-title">Pathology-Aligned Contrastive Representation Learning for Gleason Grading</div>
+            <div class="paper-authors"><strong>Maoye Huang</strong>, Jing Zhong, Jiawei Wu, Jia He, Zuoyong Li, Peng Shi*, Xiaoqin Zhu*</div>
+            <div class="paper-venue"><em>IEEE Transactions on Medical Imaging</em>, 45(7): 3734-3749, 2026. <span class="paper-meta">JCR Q1 · IF 12.4</span></div>
+          </li>
         </ul>
-        <div class="honors-subsection">Competitions</div>
-        <ul class="honors-list">
-            <li><span>Third Prize (Team), Provincial Round, China Collegiate Computer Competition – Team Programming Ladder Tournament</span><span class="honor-date">2022</span></li>
-            <li><span>Third Prize, Provincial Round, 14th Chinese Collegiate Computer Design Competition</span><span class="honor-date">2021</span></li>
-            <li><span>Second Prize, 2nd National College Computer Ability Challenge (AI Application Competition)</span><span class="honor-date">2020</span></li>
+
+        <div class="year-badge">2025</div>
+        <ul class="pub-list">
+          <li class="pub-card">
+            <div class="paper-title">SADiff: Structure-Aware Diffusion Model for Enhancing Prostate Multiphoton Microscopy Imaging</div>
+            <div class="paper-authors"><strong>Maoye Huang</strong>, Xinpeng Huang, Hong Chen, Haoyi Fan, Peng Shi*, Xiaoqin Zhu*</div>
+            <div class="paper-venue"><em>Expert Systems with Applications</em>, 292: 128447, 2025. <span class="paper-meta">JCR Q1 · IF 9.4</span></div>
+          </li>
         </ul>
-    </section>
-    <footer>
-        <p>&copy; 2026 Maoye Huang. Last updated: August 2026.</p>
-    </footer>
+
+        <div class="year-badge">2023</div>
+        <ul class="pub-list">
+          <li class="pub-card">
+            <div class="paper-title">StainGAN: Learning a Structural Preserving Translation for White Blood Cell Images</div>
+            <div class="paper-authors"><strong>Maoye Huang</strong>, Tao Wang, Yuanzheng Cai, Haoyi Fan*, Zuoyong Li*</div>
+            <div class="paper-venue"><em>Journal of Biophotonics</em>, 16(11): e202300196, 2023. <span class="paper-meta">JCR Q2 · IF 2.0</span></div>
+          </li>
+        </ul>
+
+        <div class="year-badge">2021</div>
+        <ul class="pub-list">
+          <li class="pub-card">
+            <div class="paper-title">An Improved Unsupervised White Blood Cell Classification via Contrastive Learning</div>
+            <div class="paper-authors">Yuning Zhong, <strong>Maoye Huang</strong>, Haoyi Fan, Rong Hu*, Zuoyong Li*</div>
+            <div class="paper-venue"><em>Data Mining and Big Data (DMBD)</em>, pp. 100-109, 2021. <span class="paper-meta">EI Conference</span></div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section-card" id="honors">
+        <h2>Honors and Awards</h2>
+        <ul class="honors-list">
+          <li><span class="honor-year">2026</span><span>Graduate Rising Star, 25th Science and Technology Festival, Fujian Normal University</span></li>
+          <li><span class="honor-year">2025</span><span>National Scholarship for Graduate Students</span></li>
+          <li><span class="honor-year">2025</span><span>Merit Student, Fujian Normal University</span></li>
+          <li><span class="honor-year">2024</span><span>First-Class Graduate Academic Scholarship, Fujian Normal University</span></li>
+          <li><span class="honor-year">2023</span><span>Outstanding Graduate, Minjiang University</span></li>
+          <li><span class="honor-year">2023</span><span>Outstanding Undergraduate Thesis, Minjiang University</span></li>
+          <li><span class="honor-year">2021</span><span>Third-Class Academic Scholarship, Minjiang University</span></li>
+          <li><span class="honor-year">2020</span><span>First-Class Academic Scholarship and Merit Student, Minjiang University</span></li>
+        </ul>
+
+        <div class="honors-subtitle">Selected Competitions</div>
+        <ul class="honors-list">
+          <li><span class="honor-year">2022</span><span>Team Third Prize, Provincial Round, China Collegiate Programming Contest - Group Programming Ladder Tournament</span></li>
+          <li><span class="honor-year">2021</span><span>Third Prize, Provincial Round, Chinese Collegiate Computing Competition</span></li>
+          <li><span class="honor-year">2020</span><span>Second Prize, National College Computer Ability Challenge - Artificial Intelligence Application Competition</span></li>
+        </ul>
+      </section>
+
+      <footer>© 2026 Maoye Huang. Last updated August 2026.</footer>
+    </main>
+  </div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      if (window.lucide) window.lucide.createIcons();
+      var links = Array.from(document.querySelectorAll('.quick-nav a'));
+      var sections = links.map(function (link) { return document.querySelector(link.getAttribute('href')); }).filter(Boolean);
+
+      links.forEach(function (link) {
+        link.addEventListener('click', function (event) {
+          var target = document.querySelector(link.getAttribute('href'));
+          if (target) {
+            event.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            links.forEach(function (link) {
+              link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+            });
+          }
+        });
+      }, { rootMargin: '-20% 0px -70% 0px' });
+      sections.forEach(function (section) { observer.observe(section); });
+    });
+  </script>
 </body>
 </html>
