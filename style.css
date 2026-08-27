@@ -148,6 +148,26 @@ main { min-width: 0; }
   font-weight: 600;
 }
 
+.application-note {
+  margin-top: 22px;
+  padding: 15px 17px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #60a5fa;
+  border-radius: 8px;
+}
+.application-title {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 7px;
+  color: var(--heading);
+  font-size: 14px;
+  font-weight: 700;
+}
+.application-title svg { width: 15px; height: 15px; color: var(--blue); }
+.application-note p { margin: 0; color: #475569; font-size: 14px; }
+
 .education-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 14px; }
 .education-item { padding: 13px 14px; background: #f8fafc; border: 1px solid #edf1f5; border-radius: 8px; }
 .education-item time {
@@ -219,17 +239,32 @@ main { min-width: 0; }
 .paper-title { margin-bottom: 5px; color: var(--heading); font-size: 15px; font-weight: 700; line-height: 1.5; }
 .paper-authors { color: #475569; font-size: 13px; line-height: 1.6; }
 .paper-venue { margin-top: 3px; color: #334155; font-size: 13px; line-height: 1.6; }
-.paper-meta {
-  display: inline-block;
-  margin-left: 5px;
-  padding: 1px 7px;
-  color: #475569;
-  background: #f1f5f9;
-  border-radius: 5px;
+.paper-links { margin-top: 7px; }
+.paper-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 28px;
+  padding: 3px 10px;
+  color: #334155;
+  background: #fff;
+  border: 1px solid #d6dee8;
+  border-radius: 999px;
   font-size: 11px;
-  font-style: normal;
   font-weight: 600;
-  white-space: nowrap;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.paper-button svg { width: 13px; height: 13px; }
+.paper-button:hover {
+  color: var(--blue-dark);
+  background: var(--blue-soft);
+  border-color: #93c5fd;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.08);
+  text-decoration: none;
+  transform: translateY(-1px);
 }
 
 .honors-list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
@@ -264,6 +299,5 @@ footer { padding: 8px 0 2px; color: #94a3b8; text-align: center; font-size: 12px
   .education-grid { grid-template-columns: 1fr; }
   .news-box { max-height: none; }
   .pub-card { padding: 13px; border-radius: 10px; }
-  .paper-meta { margin: 5px 0 0; }
   .honors-list li { grid-template-columns: 62px 1fr; gap: 8px; }
 }
